@@ -12,6 +12,8 @@ jobs:
         run: composer install
       - name: Install node dependencies
         run: npm install
+      - name: Create .env file
+        run: cp .env.example .env
       - name: Generate project Key
         run: php artisan key:generate 
       - name: Compile and mix assets
