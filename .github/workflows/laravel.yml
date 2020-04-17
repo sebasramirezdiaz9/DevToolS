@@ -1,0 +1,7 @@
+name: Laravel
+
+on: [push]
+
+jobs: 
+  laravel:
+    runs-on: ubuntu-latest
