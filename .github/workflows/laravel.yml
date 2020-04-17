@@ -5,3 +5,15 @@ on: [push]
 jobs: 
   laravel:
     runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install composer dependencies
+        run: composer install
+      - name: Install node dependencies
+        run: npm install
+      - name: Compile and mix assets
+        run: npm run dev
+      - name: Run tests
+        run: ./vendor/bin/phpunit
+
